@@ -16,5 +16,5 @@ test_data = pd.concat([df_test, negative_samples])
 
 test_data.reset_index(drop=True, inplace=True)
 
-train_data.to_csv("Datos/data_balanced_binary_model/train_data.csv", index=False)
-test_data.to_csv("Datos/data_balanced_binary_model/test_data.csv", index=False)
+train_data.to_csv("Datos/data_balanced_binary_model/train_binary_data.csv", index=False)
+test_data.to_csv("Datos/data_balanced_binary_model/test_binary_data.csv", index=False)
