@@ -1,7 +1,24 @@
 import pandas as pd
+import matplotlib.pyplot as plt 
+import seaborn as sns
 
-df_train = pd.read_csv('Datos/data_binary_model/train_binary_relabeled.csv')
-df_test = pd.read_csv('Datos/data_binary_model/test_binary_relabeled.csv')
+df_train = pd.read_csv('../Datos/data_binary_model/train_binary_relabeled.csv')
+df_test = pd.read_csv('../Datos/data_binary_model/test_binary_relabeled.csv')
+
+
+plt.figure(figsize=(6, 4))
+sns.countplot(data=df_test, x='label', palette='plasma', width=0.5)
+plt.title('Distribución de labels en el conjunto de prueba')
+plt.xlabel('Clase')
+plt.ylabel('Cantidad')
+plt.show()
+
+plt.figure(figsize=(6, 4))
+sns.countplot(data=df_train, x='label', palette='viridis', width=0.5)
+plt.title('Distribución de labels en el conjunto de entrenamiento')
+plt.xlabel('Clase')
+plt.ylabel('Cantidad')
+plt.show()
 
 train_negatives = df_train[df_train['label'] == 0]
 
